@@ -20,7 +20,7 @@ public interface UserResource {
      * @return the basic user profile
      */
     @GET
-    @Path("/people/~")
+    @Path("people/~")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     Response fetchBasicUserProfile(@QueryParam("oauth2_access_token") String accessToken, @QueryParam("format") String format);
