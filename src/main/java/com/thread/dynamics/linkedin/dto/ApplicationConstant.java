@@ -10,4 +10,8 @@ public interface ApplicationConstant {
     
     String OAUTH_URL = "/oauth/v2";
     
+    String SERVER_API_URL = "https://api.linkedin.com";
+    
+    String APP_VERSION = "v1";
+    
 }
