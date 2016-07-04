@@ -1,6 +1,7 @@
 package com.thread.dynamics.linkedin.service;
 
 import com.thread.dynamics.linkedin.dto.AccessTokenResponse;
+import com.thread.dynamics.linkedin.exception.ServiceException;
 
 /**
  * The Interface AuthService.
@@ -22,7 +23,8 @@ public interface AuthService {
      * @param authorizationCode the authorization code
      * @param redirectUri the redirect uri
      * @return the access token response
+     * @throws ServiceException 
      */
-    AccessTokenResponse obtainOauthAccessToken(String authorizationCode, String redirectUri);
+    AccessTokenResponse obtainOauthAccessToken(String authorizationCode, String redirectUri) throws ServiceException;
 
 }

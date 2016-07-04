@@ -1,6 +1,7 @@
 package com.thread.dynamics.linkedin;
 
 import com.thread.dynamics.linkedin.dto.AccessTokenResponse;
+import com.thread.dynamics.linkedin.exception.ServiceException;
 import com.thread.dynamics.linkedin.service.AuthService;
 import com.thread.dynamics.linkedin.service.impl.AuthServiceImpl;
 
@@ -16,7 +17,7 @@ public class LinkedinTest {
         return requestUrl;
     }
 
-    private void obtainOauthToken(final String authorizationCode, final String redirectUri) {
+    private void obtainOauthToken(final String authorizationCode, final String redirectUri) throws ServiceException {
         final AccessTokenResponse accessTokenResponse = getAuthService().obtainOauthAccessToken(authorizationCode, redirectUri);
         System.out.println(accessTokenResponse.getAccessToken());
     }
@@ -25,9 +26,13 @@ public class LinkedinTest {
         final String redirectUri = "http://localhost:8080/example/api/v1/linkedin/callback";
         final LinkedinTest linkedinTest = new LinkedinTest();
 
-        // final String authorizationCodeUrl = linkedinTest.obtainAuthorizationCodeUrl(redirectUri);
-        // System.out.println(authorizationCodeUrl);
-        linkedinTest.obtainOauthToken("AQTRdq49AXwipnYESDUQN3NQNd8A21FR-_FCO6tJCeWQtuOF0fQrCqgo-2H5ZYgFoWZskhyL8zxrufG7VR22NIaUh0GNFvdmzAuFIvFQ89H2cStK8o0", redirectUri);
+         final String authorizationCodeUrl = linkedinTest.obtainAuthorizationCodeUrl(redirectUri);
+         System.out.println(authorizationCodeUrl);
+//        try {
+//            linkedinTest.obtainOauthToken("AQRtGFFlhmGqFT-Bxxp7cfLSVtz-CCbzYY-0CMWCUfVlaLpjBEr_Efcg14fU266bELF9ClqfHaSIek2UzlyxPteZ75tbFDr7tyMPqOx2em9tZUq-BAc", redirectUri);
+//        } catch (ServiceException e) {
+//            e.printStackTrace();
+//        }
     }
 
 }

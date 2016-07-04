@@ -1,7 +1,10 @@
 package com.thread.dynamics.linkedin.service.impl;
 
+import javax.ws.rs.core.Response;
+
 import com.thread.dynamics.linkedin.dto.AccessTokenResponse;
 import com.thread.dynamics.linkedin.dto.ApplicationConstant;
+import com.thread.dynamics.linkedin.exception.ServiceException;
 import com.thread.dynamics.linkedin.resource.AuthResource;
 import com.thread.dynamics.linkedin.service.AuthService;
 import com.thread.dynamics.linkedin.service.BaseService;
@@ -36,12 +39,16 @@ public class AuthServiceImpl extends BaseService<AuthResource> implements AuthSe
         String finalUrl = baseUrl + "?client_id=" + clientId + "&redirect_uri=" + redirectURI + "&response_type=" + RESPONSE_TYPE_CODE + "&state=" + Utility.generateRandomNumber();
         return finalUrl;
     }
-    
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.thread.dynamics.linkedin.service.AuthService#obtainOauthAccessToken(java.lang.String, java.lang.String)
+     */
     @Override
-    public AccessTokenResponse obtainOauthAccessToken(final String authorizationCode, String redirectUri) {
-        final AccessTokenResponse accessTokenResponse = resource.obtainOauthAccessToken(OAUTH_TOKEN_REQUEST_GRANT_TYPE, authorizationCode, redirectUri, clientId, clientSecret);
-        return accessTokenResponse;
+    public AccessTokenResponse obtainOauthAccessToken(final String authorizationCode, String redirectUri) throws ServiceException {
+        final Response accessTokenResponse = resource.obtainOauthAccessToken(OAUTH_TOKEN_REQUEST_GRANT_TYPE, authorizationCode, redirectUri, clientId, clientSecret);
+        return handleResponse(accessTokenResponse, AccessTokenResponse.class, ServiceException.class);
     }
 
 }

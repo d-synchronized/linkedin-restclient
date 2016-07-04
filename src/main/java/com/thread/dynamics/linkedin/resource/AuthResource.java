@@ -8,8 +8,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.thread.dynamics.linkedin.dto.AccessTokenResponse;
-
 /**
  * The Interface AuthResource.
  */
@@ -41,7 +39,7 @@ public interface AuthResource {
     @POST
     @Path("accessToken")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public AccessTokenResponse obtainOauthAccessToken(@QueryParam("grant_type") String grantType, @QueryParam("code") String authorizationCode, @QueryParam("redirect_uri") String redirectUrl, @QueryParam("client_id") String clientId,
+    public Response obtainOauthAccessToken(@QueryParam("grant_type") String grantType, @QueryParam("code") String authorizationCode, @QueryParam("redirect_uri") String redirectUrl, @QueryParam("client_id") String clientId,
         @QueryParam("client_secret") String clientSecret);
 
 }
