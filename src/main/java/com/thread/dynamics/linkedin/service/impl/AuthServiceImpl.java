@@ -15,8 +15,10 @@ import com.thread.dynamics.linkedin.util.Utility;
  */
 public class AuthServiceImpl extends BaseService<AuthResource> implements AuthService {
 
+    /** The Constant RESPONSE_TYPE_CODE. */
     private static final String RESPONSE_TYPE_CODE = "code";
 
+    /** The Constant OAUTH_TOKEN_REQUEST_GRANT_TYPE. */
     private static final String OAUTH_TOKEN_REQUEST_GRANT_TYPE = "authorization_code";
 
     /**
