@@ -53,24 +53,34 @@ public class LinkedinTest {
     }
 
     public static void main(String[] args) {
-        final String redirectUri = "http://localhost:8080/YOUR_EXAMPLE_CONTEXT/api/v1/linkedin/callback";
+//        final String redirectUri = "http://localhost:8080/mangle/api/v1/linkedin/callback";
         final LinkedinTest linkedinTest = new LinkedinTest();
-
+//
 //         final String authorizationCodeUrl = linkedinTest.obtainAuthorizationCodeUrl(redirectUri);
 //         System.out.println(authorizationCodeUrl);
 //        try {
-//            linkedinTest.obtainOauthToken("AQRHF_XqWUKfwjgxsWBdyuGbjd15oOGJGPUQk6GS6LE5dlh4XhMiYSPQX-0DBMZoAHRdR_V8Oa-baum5MiGq-XG7e3qbt1sDteUrA-_giMcEtTZ7gLY", redirectUri);
+//            linkedinTest.obtainOauthToken("AQRKWwwmy0WNYd_5yJROl_cL0RnUqQqmbll4pPspCvliZFy_N26utCMJzUXht9YcqRaAHY4aiLqn-g25C6CQHV58epnc4E0QGR_7GJZSzzbsx6BXF4U", redirectUri);
 //        } catch (ServiceException e) {
 //            e.printStackTrace();
 //        }
-        
+//        
 //        linkedinTest.getBasicProfileInfo("YOUR_ACCESS_TOKEN");
+//        
+//
+//        String[] types={"type1","type2","type3"}; 
+//        
+//        linkedinTest.getCompaniesList("accessToken","query",types);
         
-
-        String[] types={"type1","type2","type3"}; 
-        
-        linkedinTest.getCompaniesList("accessToken","query",types);
+        linkedinTest.getCompanyUpdates("companyId","accessToken","type",0,10,"FORMAT_JSON");
     }
+
+	private void getCompanyUpdates(String companyId, String accessToken, String type, int start, int count, String format) {
+		try {
+			String companyUpdates = getFeedService().getCompanyUpdates(companyId, accessToken, type, start, count, format);
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+	}
 
 	private void getCompaniesList(String accessToken, String query, String[] types) {
 

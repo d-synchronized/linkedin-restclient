@@ -26,8 +26,8 @@ public class AuthServiceImpl extends BaseService<AuthResource> implements AuthSe
      */
     public AuthServiceImpl(String clientId, String clientSecret) {
         super(AuthResource.class);
-        this.clientId = clientId;
-        this.clientSecret = clientSecret;
+        this.clientId = "753ipo4qx9ywdu";
+        this.clientSecret = "6clM1r6TonpnTeU5";
     }
 
     /*
