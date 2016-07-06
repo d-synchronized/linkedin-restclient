@@ -25,7 +25,7 @@ public interface FeedResource {
 	  	@Path("companies/{companyId}/updates")
 	  	@Consumes(MediaType.APPLICATION_JSON)
 	    @Produces(MediaType.APPLICATION_JSON)
-	  	Response getCompanyUpdates(@PathParam("companyId")String companyId,@QueryParam("oauth2_access_token")String accessToken,@QueryParam("type") String type,@QueryParam("start")Integer start,@QueryParam("count") Integer count,@QueryParam("format") String format); 
+	  	Response getCompanyUpdates(@PathParam("companyId")String companyId,@QueryParam("oauth2_access_token")String accessToken,@QueryParam("event-type") String eventType,@QueryParam("start")Integer start,@QueryParam("count") Integer count,@QueryParam("format") String format); 
 
 
 }
