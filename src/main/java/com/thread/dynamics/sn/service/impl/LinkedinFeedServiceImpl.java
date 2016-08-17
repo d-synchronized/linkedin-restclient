@@ -4,22 +4,22 @@ import javax.ws.rs.core.Response;
 
 import com.thread.dynamics.sn.dto.companies.CompanyPage;
 import com.thread.dynamics.sn.exception.ServiceException;
-import com.thread.dynamics.sn.resource.FeedResource;
+import com.thread.dynamics.sn.resource.LinkedinFeedResource;
 import com.thread.dynamics.sn.service.BaseService;
-import com.thread.dynamics.sn.service.FeedService;
+import com.thread.dynamics.sn.service.LinkedinFeedService;
 
 /**
  * The Class FeedServiceImpl.
  */
-public class FeedServiceImpl extends BaseService<FeedResource> implements FeedService {
+public class LinkedinFeedServiceImpl extends BaseService<LinkedinFeedResource> implements LinkedinFeedService {
 
     /**
      * Instantiates a new feed service impl.
      *
      * @param clazz the clazz
      */
-    public FeedServiceImpl() {
-        super(FeedResource.class);
+    public LinkedinFeedServiceImpl() {
+        super(LinkedinFeedResource.class);
     }
 
 	@Override

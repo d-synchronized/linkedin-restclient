@@ -1,35 +1,29 @@
 package com.thread.dynamics.sn;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import com.thread.dynamics.sn.dto.AccessTokenResponse;
-import com.thread.dynamics.sn.dto.companies.CompanyInfo;
 import com.thread.dynamics.sn.dto.companies.CompanyPage;
 import com.thread.dynamics.sn.dto.profile.BasicProfileInfo;
 import com.thread.dynamics.sn.exception.ServiceException;
-import com.thread.dynamics.sn.resource.FeedResource;
-import com.thread.dynamics.sn.service.AuthService;
-import com.thread.dynamics.sn.service.FeedService;
-import com.thread.dynamics.sn.service.UserService;
-import com.thread.dynamics.sn.service.impl.AuthServiceImpl;
-import com.thread.dynamics.sn.service.impl.FeedServiceImpl;
-import com.thread.dynamics.sn.service.impl.UserServiceImpl;
+import com.thread.dynamics.sn.service.LinkedinAuthService;
+import com.thread.dynamics.sn.service.LinkedinFeedService;
+import com.thread.dynamics.sn.service.LinkedinUserService;
+import com.thread.dynamics.sn.service.impl.LinkedinAuthServiceImpl;
+import com.thread.dynamics.sn.service.impl.LinkedinFeedServiceImpl;
+import com.thread.dynamics.sn.service.impl.LinkedinUserServiceImpl;
 
 public class LinkedinTest {
 
-    private AuthService getAuthService() {
-        final AuthService authService = new AuthServiceImpl("YOUR_CLIENT_ID", "YOUR_CLIENT_SECRET");
+    private LinkedinAuthService getAuthService() {
+        final LinkedinAuthService authService = new LinkedinAuthServiceImpl("YOUR_CLIENT_ID", "YOUR_CLIENT_SECRET");
         return authService;
     }
 
-    private UserService getUserService() {
-        return new UserServiceImpl();
+    private LinkedinUserService getUserService() {
+        return new LinkedinUserServiceImpl();
     }
     
-    private FeedService getFeedService() {
-        return new FeedServiceImpl();
+    private LinkedinFeedService getFeedService() {
+        return new LinkedinFeedServiceImpl();
     }
 
     private String obtainAuthorizationCodeUrl(final String redirectUri) {

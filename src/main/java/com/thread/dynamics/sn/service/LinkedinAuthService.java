@@ -6,7 +6,7 @@ import com.thread.dynamics.sn.exception.ServiceException;
 /**
  * The Interface AuthService.
  */
-public interface AuthService {
+public interface LinkedinAuthService {
 
     /**
      * Obtain authorization code url.

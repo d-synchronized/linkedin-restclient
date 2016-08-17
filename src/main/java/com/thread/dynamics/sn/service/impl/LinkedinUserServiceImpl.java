@@ -4,22 +4,22 @@ import javax.ws.rs.core.Response;
 
 import com.thread.dynamics.sn.dto.profile.BasicProfileInfo;
 import com.thread.dynamics.sn.exception.ServiceException;
-import com.thread.dynamics.sn.resource.UserResource;
+import com.thread.dynamics.sn.resource.LinkedinUserResource;
 import com.thread.dynamics.sn.service.BaseService;
-import com.thread.dynamics.sn.service.UserService;
+import com.thread.dynamics.sn.service.LinkedinUserService;
 
 /**
  * The Class UserServiceImpl.
  */
-public class UserServiceImpl extends BaseService<UserResource> implements UserService {
+public class LinkedinUserServiceImpl extends BaseService<LinkedinUserResource> implements LinkedinUserService {
 
     private static final String FORMAT_JSON = "json";
 
     /**
      * Instantiates a new user service impl.
      */
-    public UserServiceImpl() {
-        super(UserResource.class);
+    public LinkedinUserServiceImpl() {
+        super(LinkedinUserResource.class);
     }
 
     /*

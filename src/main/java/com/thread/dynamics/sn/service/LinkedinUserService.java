@@ -6,7 +6,7 @@ import com.thread.dynamics.sn.exception.ServiceException;
 /**
  * The Interface UserService.
  */
-public interface UserService {
+public interface LinkedinUserService {
 
     /**
      * Gets the user profile info.

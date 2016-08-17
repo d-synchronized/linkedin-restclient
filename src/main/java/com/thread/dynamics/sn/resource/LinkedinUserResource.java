@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 import com.thread.dynamics.sn.dto.ApplicationConstant;
 
 @Path(ApplicationConstant.APP_VERSION)
-public interface UserResource {
+public interface LinkedinUserResource {
 
     /**
      * Gets the basic user profile.

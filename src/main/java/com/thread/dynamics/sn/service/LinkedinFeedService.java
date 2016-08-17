@@ -6,7 +6,7 @@ import javax.ws.rs.QueryParam;
 import com.thread.dynamics.sn.dto.companies.CompanyPage;
 import com.thread.dynamics.sn.exception.ServiceException;
 
-public interface FeedService {
+public interface LinkedinFeedService {
 
 	
    CompanyPage  fetchCompaniesList(final String accessToken,final String query,final String types) throws ServiceException;

@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
  * The Interface AuthResource.
  */
 @Path("oauth/v2")
-public interface AuthResource {
+public interface LinkedinAuthResource {
 
     /**
      * Obtain authorization code url.
