@@ -12,6 +12,10 @@ public interface ApplicationConstant {
     
     String SERVER_API_URL = "https://api.linkedin.com";
     
-    String APP_VERSION = "v1";
+	String APP_VERSION = "v1";
+
+	String INSTAGRAM_SERVER_URI = "https://api.instagram.com";
+
+	String INSTAGRAM_OAUTH_URL = "/oauth";
     
 }

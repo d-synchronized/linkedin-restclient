@@ -26,8 +26,8 @@ public class LinkedinAuthServiceImpl extends BaseService<LinkedinAuthResource> i
      */
     public LinkedinAuthServiceImpl(String clientId, String clientSecret) {
         super(LinkedinAuthResource.class);
-        this.clientId = "753ipo4qx9ywdu";
-        this.clientSecret = "6clM1r6TonpnTeU5";
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
     }
 
     /*
